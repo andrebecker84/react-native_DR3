@@ -1,16 +1,16 @@
 import {
     Button,
     Avatar,
-    Card,
-    IconButton,
-    Fab,
-    Checkbox,
-    Progressbar,
-    Radio,
-    Snackbar,
-    Tooltip,
+    // Card,
+    // IconButton,
+    // Fab,
+    // Checkbox,
+    // Progressbar,
+    // Radio,
+    // Snackbar,
+    // Tooltip,
     TextInput,
-    List,
+    // List,
     Grid
 } from "@/components";
 import React from "react";
@@ -44,34 +44,36 @@ const Components = () => {
     const [text, setText] = React.useState("");
 
     return   <ScrollView>
-                    <Progressbar progress={0.5} color={MD3Colors.primary10} />
+                    {/* <Progressbar progress={0.5} color={MD3Colors.primary10} /> */}
                     <Grid
-                        elevation={2}
+                        elevation={5}
                     >
-                        <Button onPress={onToggleSnackBar} mode="contained">{visible ? 'Hide' : 'Show'}</Button>
+                        <Button onPress={onToggleSnackBar} mode="contained">{visible ? 'Ocultar' : 'Mostrar'}</Button>
                     </Grid>
-                    <Tooltip title="Botão">
-                        <Avatar source={require('../assets/images/react-logo.png')} />
-                    </Tooltip>
-                    <Avatar label="AB" />
-                    <Avatar icon="folder" />
-                    <Card
+                    <br />
+                    {/* <Tooltip title="Botão"> */}
+                        <Avatar source={require('../assets/images/avatar.png')} /><br />
+                    {/* </Tooltip> */}
+                    <Avatar label="AB" /><br />
+                    <Avatar icon="home" /><br />
+                    {/* <Card
                         title="Card Title"
                         subtitle="Card Subtitle"
                         left={(props: any) => <Avatar {...props} icon="folder" />}
                         right={(props: any) => <IconButton {...props} icon="dots-vertical" onPress={() => {}} />}
-                    />
-                    <Checkbox
+                    /> */}
+                    {/* <Checkbox
                         label="Item"
                         status={checked ? 'checked' : 'unchecked'}
                         onPress={() => {
                             setChecked(!checked);
                         }}
-                    />
-                    <Radio
+                    /> */}
+                    {/* <Radio
                         valueChecked={valueChecked}
-                        radios={radios} />
-                    <Snackbar
+                        radios={radios} 
+                    /> */}
+                    {/* <Snackbar
                         visible={visible}
                         onDismiss={onDismissSnackBar}
                         text="Hey there! I'm a Snackbar."
@@ -83,13 +85,14 @@ const Components = () => {
                             },
                         }}>
                         Hey there! I'm a Snackbar.
-                    </Snackbar>
+                    </Snackbar> */}
                     <TextInput
-                        label="Email"
+                        label=""
+                        placeholder="Digite seu nome..."
                         value={text}
                         onChangeText={text => setText(text)}
                     />
-                    <List
+                    {/* <List
                         title="First Item"
                         description="Item description"
                         left={() =>  <Checkbox
@@ -98,8 +101,8 @@ const Components = () => {
                                                 setChecked(!checked);
                                             }}
                                         />}
-                    />
-                    <Fab
+                    /> */}
+                    {/* <Fab
                         icon="plus"
                         style={{
                             position: 'absolute',
@@ -108,8 +111,8 @@ const Components = () => {
                             bottom: 20,
                         }}
                         onPress={() => console.log('Pressed')}
-                    />
-                    <Fab
+                    /> */}
+                    {/* <Fab
                         open={open}
                         visible
                         icon={open ? 'calendar-today' : 'plus'}
@@ -137,7 +140,7 @@ const Components = () => {
                                 // do something if the speed dial is openr
                             }
                         }}
-                    />
+                    /> */}
             </ScrollView>
 };
 export default Components;
