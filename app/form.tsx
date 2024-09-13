@@ -123,32 +123,31 @@ export default function FormScreen() {
                         <Text>Carregando...</Text>
                         : data.images.map((image: string, index: number) => {
                             return <Grid key={index}
-                                  style={{
-                                    width: '33.33%',
-                                    height: 100,
-                                    padding: 5,
-                                    position: 'relative'
-                                  }}
-                                >
+                                         style={{
+                                             width: '33.33%',
+                                             height: 100,
+                                             padding: 5,
+                                             position: 'relative'
+                                         }}>
                                 <Card
                                     style={{
-                                      width: '100%',
-                                      height: '100%',
-                                      zIndex: 2,
+                                        width: '100%',
+                                        height: '100%',
+                                        zIndex: 2,
                                     }}
                                     source={{ uri: image }}/>
                                 <IconButton
                                     icon={"close"}
                                     onPress={() => {
-                                      setDialogVisible(true);
-                                      setImageToDelete(index);
+                                        setDialogVisible(true);
+                                        setImageToDelete(index);
                                     }}
                                     style={{
-                                      position: 'absolute',
-                                      top: -15,
-                                      right: -15,
-                                      zIndex: 2,
-                                      backgroundColor: "#fff",
+                                        position: 'absolute',
+                                        top: -15,
+                                        right: -15,
+                                        zIndex: 2,
+                                        backgroundColor: "#fff",
                                     }}/>
                             </Grid>
                         })
