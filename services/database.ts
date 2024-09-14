@@ -1,8 +1,10 @@
 import * as SQLite from 'expo-sqlite';
 
 const getDb = async () => {
-    // @ts-ignore
-    return await SQLite.openDatabaseAsync(process.env.EXPO_PUBLIC_DATABASE_SQLITE);
+  // @ts-ignore
+  return await SQLite.openDatabaseAsync("project-list", {
+      useNewConnection: true
+  });
 }
 
 const createTableUser = async() => {

@@ -20,3 +20,5 @@ export { default as Text } from './text';
 export { default as Dialog } from './dialog';
 export { default as Camera } from './camera';
 export { default as Modal } from './modal';
+export { default as DataTable } from './datatable';
+export { default as Switch } from './switch';

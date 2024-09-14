@@ -11,17 +11,19 @@ import {
     Tooltip,
     TextInput,
     List,
-    Grid
+    Grid,
+    DataTable,
+    Switch as SwitchC
 } from "@/components";
-import React from "react";
+import { useState } from "react";
 import {MD3Colors } from 'react-native-paper';
 import {ScrollView} from "react-native";
 
 // @ts-ignore
 const Components = () => {
-    const [state, setState] = React.useState({ open: false });
-    const [checked, setChecked] = React.useState(false);
-    const [valueChecked, setValueChecked] = React.useState('first');
+    const [state, setState] = useState({ open: false });
+    const [checked, setChecked] = useState(false);
+    const [valueChecked, setValueChecked] = useState('first');
 
     // @ts-ignore
     const onStateChange = ({ open }) => setState({ open });
@@ -34,14 +36,17 @@ const Components = () => {
         { value: 'third', label: 'third', setChecked: (value: string) => setValueChecked(value) },
     ];
 
-    const [visible, setVisible] = React.useState(false);
+    const [visible, setVisible] = useState(false);
     const onToggleSnackBar = () => setVisible(!visible);
     const onDismissSnackBar = () => setVisible(false);
 
-    const [isSwitchOn, setIsSwitchOn] = React.useState(false);
+    const [isSwitchOn, setIsSwitchOn] = useState(false);
     const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
 
-    const [text, setText] = React.useState("");
+    const [switchValue, setSwitchValue] = useState(false);
+    const handleToggleSwitch = (value: boolean) => { setSwitchValue(value); };
+
+    const [text, setText] = useState("");
 
     return   <ScrollView>
                     <Progressbar progress={0.5} color={MD3Colors.primary10} />
@@ -60,6 +65,13 @@ const Components = () => {
                         subtitle="Card Subtitle"
                         left={(props: any) => <Avatar {...props} icon="folder" />}
                         right={(props: any) => <IconButton {...props} icon="dots-vertical" onPress={() => {}} />}
+                    />
+                    <SwitchC
+                      disabled={false}
+                      value={switchValue}
+                      color="blue"
+                      onValueChange={handleToggleSwitch}
+                      style={{ margin: 20 }}
                     />
                     <Checkbox
                         label="Item"
